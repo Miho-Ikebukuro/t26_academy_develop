@@ -44,6 +44,13 @@ public class BookMstService {
     }
     
 }
+public void save(BookMstDto bookMstDto) {
+            BookMst bookMst = new BookMst();
 
+            bookMst.setTitle(bookMstDto.getTitle());
+            bookMst.setIsbn(bookMstDto.getIsbn());
+            this.bookMstRepository.save(bookMst);
+ }
+}
 
 

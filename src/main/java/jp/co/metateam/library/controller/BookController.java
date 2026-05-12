@@ -52,3 +52,11 @@ public class BookController {
     }
     
 }
+@PostMapping("/book/add")
+    public String add(BookMstDto bookMstDto,Model model) {
+    bookMstService.save(bookMstDto);
+            model.addAttribute("title", bookMstDto.getTitle());
+             model.addAttribute("isbn", bookMstDto.getIsbn());
+             return "redirect:/book/index";
+        }
+    }
